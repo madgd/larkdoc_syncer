@@ -3,6 +3,7 @@ deal with lark auth
 """
 
 import configparser
+import sys
 import os
 import urllib3
 import json
@@ -194,7 +195,8 @@ class auth():
 
 if __name__ == "__main__":
     sec = "DEFAULT"
-    test = auth("%s/../config/auth.ini" % os.getcwd(), sec)
+    # print(sys.path[0])
+    test = auth("%s/../config/auth.ini" % sys.path[0], sec)
     print(test.config.items(sec))
     # test.get_app_access_token(sec)
     # test.get_user_code(sec)
