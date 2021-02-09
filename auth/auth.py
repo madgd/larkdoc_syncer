@@ -45,7 +45,7 @@ class auth():
         headers['Content-Type'] = 'application/json'
         encoded_data = json.dumps(data).encode('utf-8')
         http = urllib3.PoolManager()
-        r = http.request("POST", url, headers=headers, body=encoded_data)
+        r = http.request("POST", url, headers=headers, body=encoded_data, timeout=5)
         res = json.loads(r.data.decode('utf-8'))
         return res
 
